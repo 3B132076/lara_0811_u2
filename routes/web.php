@@ -12,12 +12,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
+Route::get('r1', function() {
+    return redirect('r2');
+});
+Route::get('r2', function() {
+    return redirect('welcome');
+});
+Route::get('welcome', function() {
     return view('welcome');
 });
-Route::get('/', function() {
-    return 'welcome';
-});
-Route::get('/', function () {
-    return view('welcome');
+Route::get('hello/{name?}',  function($name  =  'Everybody')  {
+    return'Hello,'.$name;
 });

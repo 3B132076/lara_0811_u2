@@ -12,11 +12,13 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/',  function()  {
-    return  'welcome';
+Route::get('/', function () {
+    return view('welcome');
 });
-Route::get('/',  function()  {
-    return  view('welcome');
+
+// 其他測試路由
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 Route::get('r1', function() {
     return redirect('r2');
